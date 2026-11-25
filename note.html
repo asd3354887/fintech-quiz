@@ -13,7 +13,7 @@ table{border-collapse:collapse;width:100%;font-size:14px;margin:8px 0}
 th,td{border:1px solid var(--bd);padding:6px 8px;vertical-align:top}th{background:var(--th)}
 .q{margin:14px 0;padding:10px 12px;border:1px solid var(--bd);border-radius:10px}
 .star{color:#d97706}#totop{position:fixed;right:14px;bottom:18px;background:var(--pri);color:#fff;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;text-decoration:none}
-</style></head><body id="top"><div class="top"><a href="./?v=1792128999">📝 題庫</a><a href="note.html?v=1792128999">📖 筆記</a><a href="answers.html?v=1792128999">✅ 解析</a><a href="numbers.html?v=1792128999">🔢 數字</a><a href="predict.html?v=1792128999">🎯 預測</a></div><main><h1>金融科技力知識檢定　讀書筆記（歷屆考古整理）</h1>
+.top details.more{position:relative}.top details.more>summary{list-style:none;cursor:pointer;border:1px solid var(--bd);border-radius:10px;padding:6px 10px;font-size:15px;color:var(--pri)}.top details.more>summary::-webkit-details-marker{display:none}.top details.more .morebox{position:absolute;left:0;top:calc(100% + 4px);z-index:8;background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:8px;display:flex;flex-direction:column;gap:6px;min-width:110px;box-shadow:0 4px 14px rgba(0,0,0,.12)}</style></head><body id="top"><div class="top"><a href="./?v=1795638664">📝 題庫</a><a href="note.html?v=1795638664">📖 筆記</a><details class="more"><summary>⋯ 更多</summary><div class="morebox"><a href="numbers.html?v=1795638664">🔢 數字</a><a href="answers.html?v=1795638664">✅ 解析</a></div></details></div><main><h1>金融科技力知識檢定　讀書筆記（歷屆考古整理）</h1>
 <p class="mut">這份是從<strong>本站主庫歷屆試題＋官方答案＋解析</strong>整理的自用筆記，只放考過的考點，並附屆次／題號。刷題回「📝 題庫」；完整長文解析用「✅ 解析」；背數字用「🔢 數字」。（不是市售課本原文，也不會放進試用／付費站。）</p>
 <h2>第 0 部分　考試攻略</h2>
 <p class="mut">TABF 簡章：全一節 60 題 90 分鐘；第 1–40 題每題 1.5 分、第 41–60 題每題 2 分；70 分合格</p>
@@ -167,4 +167,20 @@ th,td{border:1px solid var(--bd);padding:6px 8px;vertical-align:top}th{backgroun
 <li>⭐ <b>(2) 種子期</b> <span class="mut">（20-21、11-54）</span><br>新創企業多數處於「種子期」：已有產品構想並開始開發原型、尋求天使或種子資金，尚未形成穩定營收，故選(2)。構想期仍未成立事業；成熟期與準備IPO期的企業比例很低。</li>
 <li>⭐ <b>(1) 擴大實體分行規模，以提供更好服務</b> <span class="mut">（16-38、8-39）</span><br>傳統銀行的數位化策略應適時引進成熟AI、建立從業人員數位應對策略、與異業結盟把金融服務嵌入生活場景。擴大實體分行規模與數位化趨勢背道而馳、成本高，較不適合，故選(1)。</li>
 <li>⭐ <b>(2) 學習金融科技專業能力且能完成系統程式之開發</b> <span class="mut">（14-57、11-59）</span><br>數位時代金融從業人員的「與時俱進」原則包括：從工作流程設想客戶痛點並以創新方法解決、多方吸取同業或異業數位應用案例、持續關注科技變化並以開放態度嘗試。從業人員需理解科技應用即可，不必自己完成系統程式開發，故選(2)。</li>
-</ul></main><a id="totop" href="#top">↑</a></body></html>
+</ul></main><a id="totop" href="#top">↑</a><script>(function(){
+const p = new URLSearchParams(location.search).get('only'); if (!p) return;
+const ids = p.split(','), main = document.querySelector('main'), kids = [...main.children];
+let keep = false, lv = 9, n = 0;
+kids.forEach(el => {
+  const m = /^H([1-4])$/.exec(el.tagName);
+  if (m) { const l = +m[1]; if (ids.includes(el.id)) { keep = true; lv = l; n++; } else if (keep && l <= lv) keep = false; }
+  if (!keep) el.style.display = 'none';
+});
+if (!n) { kids.forEach(el => el.style.display = ''); return; }
+const bar = document.createElement('div');
+bar.className = 'mut';
+bar.style.cssText = 'background:var(--th);border-radius:10px;padding:8px 12px;margin:10px 0';
+bar.innerHTML = '只顯示這次要讀的章節　<a href="note.html">看完整筆記</a>　<a href="javascript:history.back()">← 回上一頁</a>';
+main.insertBefore(bar, main.firstChild);
+window.scrollTo(0, 0);
+})();</script></body></html>
