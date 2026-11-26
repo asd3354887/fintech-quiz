@@ -206,7 +206,7 @@ function hotList(s, ch) {
 }
 
 /* ---------- 每日作業（自選天數・第 1 天＝開始日） ---------- */
-const NOTE = {};
+const NOTE = {"第 0 部分　考試攻略": "exam-strategy", "考試攻略": "exam-strategy", "考試資訊與準備策略": "exam-strategy", "科技力 1｜金融科技概論與發展趨勢": "科技力 1｜金融科技概論與發展趨勢", "科技力 2｜數位支付與行動支付": "科技力 2｜數位支付與行動支付", "科技力 3｜區塊鏈、加密資產與央行數位貨幣": "科技力 3｜區塊鏈、加密資產與央行數位貨幣", "科技力 4｜人工智慧、機器學習與大數據": "科技力 4｜人工智慧、機器學習與大數據", "科技力 5｜雲端運算、資安與個資保護": "科技力 5｜雲端運算、資安與個資保護", "科技力 6｜數位銀行、純網銀與開放銀行": "科技力 6｜數位銀行、純網銀與開放銀行", "科技力 7｜P2P借貸、群眾募資與數位理財": "科技力 7｜P2P借貸、群眾募資與數位理財", "科技力 8｜保險科技、監理科技與法遵科技": "科技力 8｜保險科技、監理科技與法遵科技", "科技力 9｜監理沙盒與金融科技法規": "科技力 9｜監理沙盒與金融科技法規", "科技力 10｜數位轉型、商業模式與創新管理": "科技力 10｜數位轉型、商業模式與創新管理", "科技力 11｜其他": "科技力 11｜其他"};
 const RATE = 45;
 const PLAN_DAY_OPTS = [3, 5, 7, 10, 14, 21];
 const R = (s, c, min) => ({k: 'read', s, c, min}), H = (s, c) => ({k: 'hi', s, c}), O = (s, c) => ({k: 'one', s, c}), V = s => ({k: 'rev', s});
@@ -246,7 +246,7 @@ function buildPlan(n, startMs) {
   const wSub = SUBS.length > 1 ? 'all' : SUBS[0];
   splitCh(chapters, content).forEach((chs, i) => {
     const tasks = [];
-    if (!days.length) tasks.push(C('看筆記「考試資訊與準備策略」', 15, '第 1 部分'));
+    if (!days.length) tasks.push(C('看筆記「考試攻略」', 15, '考試攻略'));
     chs.forEach(({s, c}) => { tasks.push(R(s, c, 15), H(s, c)); });
     if (i === content - 1) tasks.push(W(wSub, 30));
     push(tasks);
